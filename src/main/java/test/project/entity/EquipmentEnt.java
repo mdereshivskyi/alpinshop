@@ -21,7 +21,7 @@ import lombok.Setter;
 public class EquipmentEnt {
 
 	@Column(nullable = false, unique = true)
-	private String equopmentId;
+	private String equipmentId;
 	
 	@Column(nullable = false)
 	private String type;

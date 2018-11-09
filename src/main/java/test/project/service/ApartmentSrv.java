@@ -2,19 +2,19 @@ package test.project.service;
 
 import java.util.List;
 
-import test.project.domain.ApartmentDTO;
+import test.project.domain.BagpackDTO;
 
 public interface ApartmentSrv {
 
-	void create(ApartmentDTO apartment);
+	void create(BagpackDTO apartment);
 	
-	ApartmentDTO get(String apartmentId);
+	BagpackDTO get(String apartmentId);
 	
-	List<ApartmentDTO> getAll();
+	List<BagpackDTO> getAll();
 	
-	void update(ApartmentDTO apartment);
+	void update(BagpackDTO apartment);
 	
 	void delete(Long id);
 	
-	ApartmentDTO deleteByApartmentId(String apartmentId);
+	BagpackDTO deleteByApartmentId(String apartmentId);
 }

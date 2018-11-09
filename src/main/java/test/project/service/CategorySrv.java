@@ -2,17 +2,17 @@ package test.project.service;
 
 import java.util.List;
 
-import test.project.domain.CategoryDTO;
+import test.project.domain.EquipmentDTO;
 
 public interface CategorySrv {
 
-	void saveCategory(CategoryDTO dto);
+	void saveCategory(EquipmentDTO dto);
 	
-	List<CategoryDTO> findAllCategories();
+	List<EquipmentDTO> findAllCategories();
 	
-	CategoryDTO findById(Long id);
+	EquipmentDTO findById(Long id);
 	
-	void updateCategory(CategoryDTO dto);
+	void updateCategory(EquipmentDTO dto);
 	
 	void delete (Long id);
 }

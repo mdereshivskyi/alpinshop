@@ -1,11 +1,11 @@
 package test.project.service;
 
-import test.project.domain.BookingStatusDTO;
+import test.project.domain.BootsDTO;
 
 public interface BookingStatusSrv {
 
-	void create(BookingStatusDTO booking);
+	void create(BootsDTO booking);
 	
-	BookingStatusDTO deleteByBookingStatusId(String bookingStatusId);
+	BootsDTO deleteByBookingStatusId(String bookingStatusId);
 	
 }

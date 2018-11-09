@@ -4,11 +4,11 @@ import static test.project.constants.ErrorMessage.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import test.project.domain.BookingStatusDTO;
+import test.project.domain.BootsDTO;
 import test.project.entity.HelmetEnt;
 import test.project.exceptions.BookingNotFoundException;
 import test.project.exceptions.BookingServiceException;
-import test.project.repository.BookingStatusRepos;
+import test.project.repository.BootsRepos;
 import test.project.service.BookingStatusSrv;
 import test.project.service.utils.ObjectMapperUtils;
 import test.project.service.utils.StringUtils;
@@ -16,7 +16,7 @@ import test.project.service.utils.StringUtils;
 public class BookingStatusSrvImpl implements BookingStatusSrv{
 
 	@Autowired
-	private BookingStatusRepos bookingStatusRepos;
+	private BootsRepos bookingStatusRepos;
 	
 	@Autowired
 	private ObjectMapperUtils objectMapper;
@@ -25,7 +25,7 @@ public class BookingStatusSrvImpl implements BookingStatusSrv{
 	private StringUtils stringUtils;
 	
 	@Override
-	public void create(BookingStatusDTO booking) {
+	public void create(BootsDTO booking) {
 		String bookingStatusId = stringUtils.generate();
 		if(!bookingStatusRepos.existsByBookingStatusID(bookingStatusId)) {
 			booking.setBookingStatusId(bookingStatusId);
@@ -39,12 +39,12 @@ public class BookingStatusSrvImpl implements BookingStatusSrv{
 	}
 
 	@Override
-	public BookingStatusDTO deleteByBookingStatusId(String bookingStatusId) {
+	public BootsDTO deleteByBookingStatusId(String bookingStatusId) {
 		HelmetEnt bookingStatusEnt = bookingStatusRepos.deleteByBookingStatusId(bookingStatusId);
 		if(bookingStatusEnt == null) {
 			throw new BookingNotFoundException(NO_RECORD_FOUND);
 		}
-		return objectMapper.map(bookingStatusId, BookingStatusDTO.class);
+		return objectMapper.map(bookingStatusId, BootsDTO.class);
 	}
 
 }

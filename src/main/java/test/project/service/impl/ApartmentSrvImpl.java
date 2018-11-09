@@ -6,11 +6,11 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import test.project.domain.ApartmentDTO;
+import test.project.domain.BagpackDTO;
 import test.project.entity.BootsEnt;
 import test.project.exceptions.ApartmentNotFoundException;
 import test.project.exceptions.ApartmentServiceException;
-import test.project.repository.ApartmentsRepos;
+import test.project.repository.BagpackRepos;
 import test.project.service.ApartmentSrv;
 import test.project.service.utils.ObjectMapperUtils;
 import test.project.service.utils.StringUtils;
@@ -19,7 +19,7 @@ import test.project.service.utils.StringUtils;
 public class ApartmentSrvImpl implements ApartmentSrv{
 	
 	@Autowired
-	private ApartmentsRepos apartmentRepos;
+	private BagpackRepos apartmentRepos;
 
 	@Autowired
 	private ObjectMapperUtils objectMapper;
@@ -28,7 +28,7 @@ public class ApartmentSrvImpl implements ApartmentSrv{
 	private StringUtils stringUtils;
 	
 	@Override
-	public void create(ApartmentDTO apartment) {
+	public void create(BagpackDTO apartment) {
 		String apartmentId = stringUtils.generate();
 		if(!apartmentRepos.existsByApartmentId(apartmentId)) {
 			apartment.setApartmentId(apartmentId);
@@ -42,21 +42,21 @@ public class ApartmentSrvImpl implements ApartmentSrv{
 	}
 
 	@Override
-	public ApartmentDTO get(String apartmentId) {
+	public BagpackDTO get(String apartmentId) {
 		BootsEnt apartmentEnt = apartmentRepos.findByApartmentId(apartmentId);
 		if(apartmentEnt == null) {
 			throw new ApartmentNotFoundException(NO_RECORD_FOUND);
-		}return objectMapper.map(apartmentEnt, ApartmentDTO.class);
+		}return objectMapper.map(apartmentEnt, BagpackDTO.class);
 	}
 
 	@Override
-	public List<ApartmentDTO> getAll() {
+	public List<BagpackDTO> getAll() {
 		List<BootsEnt> apartments = apartmentRepos.findAll();
-		return objectMapper.mapAll(apartments, ApartmentDTO.class);
+		return objectMapper.mapAll(apartments, BagpackDTO.class);
 	}
 
 	@Override
-	public void update(ApartmentDTO apartment) {
+	public void update(BagpackDTO apartment) {
 		apartmentRepos.save(objectMapper.map(apartment, BootsEnt.class));
 		
 	}
@@ -68,12 +68,12 @@ public class ApartmentSrvImpl implements ApartmentSrv{
 	}
 
 	@Override
-	public ApartmentDTO deleteByApartmentId(String apartmentId) {
+	public BagpackDTO deleteByApartmentId(String apartmentId) {
 		BootsEnt apartmentEnt = apartmentRepos.deleteByApartmentId(apartmentId);
 		if(apartmentEnt == null) {
 			throw new ApartmentNotFoundException(NO_RECORD_FOUND);
 		}
-		return objectMapper.map(apartmentId, ApartmentDTO.class);
+		return objectMapper.map(apartmentId, BagpackDTO.class);
 	}
 
 }

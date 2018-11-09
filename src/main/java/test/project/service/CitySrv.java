@@ -2,19 +2,19 @@ package test.project.service;
 
 import java.util.List;
 
-import test.project.domain.CityDTO;
+import test.project.domain.HelmetDTO;
 
 public interface CitySrv {
 	
-	void create(CityDTO city);
+	void create(HelmetDTO city);
 	
-	CityDTO get(String cityId);
+	HelmetDTO get(String cityId);
 	
-	List<CityDTO> getAll();
+	List<HelmetDTO> getAll();
 	
-	void update(CityDTO city);
+	void update(HelmetDTO city);
 	
 	void delete(Long id);
 	
-	CityDTO deleteByCityId(String cityId);
+	HelmetDTO deleteByCityId(String cityId);
 }

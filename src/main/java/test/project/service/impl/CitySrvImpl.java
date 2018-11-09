@@ -5,7 +5,7 @@ import static test.project.constants.ErrorMessage.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import test.project.domain.CityDTO;
+import test.project.domain.HelmetDTO;
 import test.project.entity.JacketEnt;
 import test.project.exceptions.CityNotFoundException;
 import test.project.exceptions.CityServiceException;
@@ -26,7 +26,7 @@ public class CitySrvImpl implements CitySrv{
 	private StringUtils stringUtils;
 	
 	@Override
-	public void create(CityDTO city) {
+	public void create(HelmetDTO city) {
 		String cityId = stringUtils.generate();
 		if(!cityRepos.existsByCityId(cityId)) {
 			city.setCityId(cityId);
@@ -41,21 +41,21 @@ public class CitySrvImpl implements CitySrv{
 	}
 
 	@Override
-	public CityDTO get(String cityId) {
+	public HelmetDTO get(String cityId) {
 		JacketEnt cityEnt = cityRepos.findByCityId(cityId);
 		if(cityEnt == null) {
 			throw new CityNotFoundException(NO_RECORD_FOUND);
-		} return objectMapper.map(cityEnt, CityDTO.class);
+		} return objectMapper.map(cityEnt, HelmetDTO.class);
 	}
 
 	@Override
-	public List<CityDTO> getAll() {
+	public List<HelmetDTO> getAll() {
 		List<JacketEnt> cities = cityRepos.findAll();
-		return objectMapper.mapAll(cities, CityDTO.class);
+		return objectMapper.mapAll(cities, HelmetDTO.class);
 	}
 
 	@Override
-	public void update(CityDTO city) {
+	public void update(HelmetDTO city) {
 		cityRepos.save(objectMapper.map(city, JacketEnt.class));
 		
 	}
@@ -66,12 +66,12 @@ public class CitySrvImpl implements CitySrv{
 	}
 
 	@Override
-	public CityDTO deleteByCityId(String cityId) {
+	public HelmetDTO deleteByCityId(String cityId) {
 		JacketEnt cityEnt = cityRepos.deleteByCityId(cityId);
 		if(cityEnt == null) {
 			throw new CityNotFoundException(NO_RECORD_FOUND);
 		}
-		return objectMapper.map(cityId, CityDTO.class);
+		return objectMapper.map(cityId, HelmetDTO.class);
 	}
 
 }

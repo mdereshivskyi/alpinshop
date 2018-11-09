@@ -17,7 +17,7 @@ import lombok.Setter;
 @NoArgsConstructor
 
 @Entity
-@Table(name = "pants")
+@Table(name = "pant")
 public class PantsEnt extends BaseEnt{
 	
 	@Column(nullable = false, unique = true)

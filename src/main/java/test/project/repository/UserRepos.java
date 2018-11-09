@@ -12,4 +12,9 @@ public interface UserRepos extends JpaRepository<UserEnt, Long>{
 	
 	boolean existsByUsernam(String username);
 	
+	boolean existsByEmail(String email);
+	
+	UserEnt findByEmailVerificationToken(String token);
+	
+	
 }

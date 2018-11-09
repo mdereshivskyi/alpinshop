@@ -24,7 +24,7 @@ public class BagpackEnt extends BaseEnt{
 	private String bagpackId;
 	
 	@Column(nullable = false)
-	private String volume;
+	private Long volume;
 	
 	@Column(nullable = false)
 	private String color;
