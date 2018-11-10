@@ -11,7 +11,7 @@ import lombok.NoArgsConstructor;
 public class PantsDTO {
 
 	private Long id;
-	private String panstId;
+	private String pantsId;
 	private String size;
 	private String color;
 	private String description;

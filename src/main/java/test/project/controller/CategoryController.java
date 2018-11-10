@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import test.project.domain.EquipmentDTO;
-import test.project.service.CategorySrv;
+import test.project.service.EquipmentSrv;
 
 @RestController
 @RequestMapping("/category")

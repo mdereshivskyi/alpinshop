@@ -10,7 +10,7 @@ public interface UserRepos extends JpaRepository<UserEnt, Long>{
 
 	UserEnt findByUsername(String username);
 	
-	boolean existsByUsernam(String username);
+	boolean existsByUsername(String username);
 	
 	boolean existsByEmail(String email);
 	

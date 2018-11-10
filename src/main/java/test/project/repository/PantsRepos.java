@@ -10,7 +10,7 @@ import test.project.entity.PantsEnt;
 @Repository
 public interface PantsRepos extends JpaRepository<PantsEnt, Long>{
 
-	PantsEnt fingByPantId(String pantsId);
+	PantsEnt findByPantsId(String pantsId);
 	
 	List<PantsEnt> findBySize(String size);
 	

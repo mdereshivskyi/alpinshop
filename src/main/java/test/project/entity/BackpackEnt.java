@@ -17,11 +17,11 @@ import lombok.Setter;
 @NoArgsConstructor
 
 @Entity
-@Table(name = "bagpack")
-public class BagpackEnt extends BaseEnt{
+@Table(name = "backpack")
+public class BackpackEnt extends BaseEnt{
 
 	@Column(nullable = false, unique = true)
-	private String bagpackId;
+	private String backpackId;
 	
 	@Column(nullable = false)
 	private Long volume;

@@ -9,11 +9,11 @@ import lombok.NoArgsConstructor;
 
 @Data
 @NoArgsConstructor
-public class BagpackDTO {
+public class BackpackDTO {
 
 	@JsonIgnore
 	private Long id;
-	private String bagpackId;
+	private String backpackId;
 	private String volume;
 	private String color;
 	private String description;

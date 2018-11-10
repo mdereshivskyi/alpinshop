@@ -21,6 +21,6 @@ public class UserDTO {
 	private String lastName;
 	private String phoneNumber;
 	private UserRole role;
-	private List<BagpackDTO> apartments;
+	private List<BackpackDTO> apartments;
 	
 }
