@@ -88,6 +88,11 @@ public class JacketSrvImpl implements JacketSrv{
 	}
 
 	@Override
+	public List<JacketDTO> findBySize(String size){
+		return modelMapper.mapAll(jacketRepos.findBySize(size), JacketDTO.class);
+	}
+	
+	@Override
 	public JacketDTO findByJacketId(String jacketId) {
 		return modelMapper.map(jacketRepos.findByJacketId(jacketId), JacketDTO.class);
 	}

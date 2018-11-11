@@ -88,6 +88,11 @@ public class PantsSrvImpl implements PantsSrv{
 	}
 
 	@Override
+	public List<PantsDTO> findBySize(String size){
+		return modelMapper.mapAll(pantsRepos.findBySize(size), PantsDTO.class);
+	}
+	
+	@Override
 	public PantsDTO findByPantsId(String pantsId) {
 		return modelMapper.map(pantsRepos.findByPantsId(pantsId), PantsDTO.class);
 	}

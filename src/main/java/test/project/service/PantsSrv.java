@@ -19,6 +19,8 @@ public interface PantsSrv {
 	
 	List<PantsDTO> findAllPants(Pageable pageable);
 	
+	List<PantsDTO> findBySize(String size);
+	
 	PantsDTO findByPantsId(String pantsId);
 	
 	void uploadImage(MultipartFile file, String pantsId);

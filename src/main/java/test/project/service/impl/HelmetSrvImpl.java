@@ -87,6 +87,12 @@ public class HelmetSrvImpl implements HelmetSrv{
 	}
 
 	@Override
+	public List<HelmetDTO> findBySize(String size) {
+		return modelMapper.mapAll(helmetRepos.findBySize(size), HelmetDTO.class);
+	}
+
+	
+	@Override
 	public HelmetDTO findByHelmetId(String helmetId) {
 		return modelMapper.map(helmetRepos.findByHelmetId(helmetId), HelmetDTO.class);
 	}

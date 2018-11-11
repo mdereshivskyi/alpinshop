@@ -19,6 +19,8 @@ public interface HelmetSrv {
 	
 	List<HelmetDTO> findAllHelmets(Pageable pageable);
 	
+	List<HelmetDTO> findBySize(String size);
+	
 	HelmetDTO findByHelmetId(String helmetId);
 	
 	void uploadImage(MultipartFile file, String helmetId);

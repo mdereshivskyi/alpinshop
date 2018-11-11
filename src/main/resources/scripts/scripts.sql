@@ -1,0 +1,2 @@
+DROP DATABASE IF EXISTS test_marketapp;
+CREATE DATABASE test_marketapp CHAR SET UTF8;

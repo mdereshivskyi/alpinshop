@@ -19,6 +19,8 @@ public interface JacketSrv {
 	
 	List<JacketDTO> findAllJackets(Pageable pageable);
 	
+	List<JacketDTO> findBySize(String size);
+	
 	JacketDTO findByJacketId(String jacketId);
 	
 	void uploadImage(MultipartFile file, String jacketId);

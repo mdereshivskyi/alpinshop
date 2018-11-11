@@ -18,7 +18,7 @@ import lombok.Setter;
 
 @Entity
 @Table(name = "equipment")
-public class EquipmentEnt {
+public class EquipmentEnt extends BaseEnt{
 
 	@Column(nullable = false, unique = true)
 	private String equipmentId;
